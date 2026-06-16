@@ -31,32 +31,7 @@
       -webkit-backdrop-filter: blur(10px);
     }
     
-    .actions-buttons {
-      display: flex;
-      gap: 12px;
-    }
-    
-    .action-btn {
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-light);
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-family: "Cairo", sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition-fast);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .action-btn:hover {
-      background: var(--accent-primary-dim);
-      color: var(--accent-primary);
-      border-color: var(--accent-primary);
-    }
+
     
     .question-card {
       background: var(--bg-card);
@@ -104,33 +79,7 @@
       padding: 20px 24px;
     }
     
-    .toggle-answer-btn {
-      background: var(--bg-secondary);
-      color: var(--text-secondary);
-      border: 1px solid var(--border-light);
-      padding: 8px 16px;
-      border-radius: 8px;
-      font-family: "Cairo", sans-serif;
-      font-size: 13px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition-fast);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-    }
-    
-    .toggle-answer-btn:hover {
-      background: var(--accent-primary-dim);
-      color: var(--accent-primary);
-      border-color: var(--accent-primary);
-    }
-    
-    .toggle-answer-btn.active {
-      background: var(--accent-primary);
-      color: #ffffff;
-      border-color: var(--accent-primary);
-    }
+
     
     .answer-content {
       margin-top: 16px;
@@ -364,10 +313,7 @@
         <!-- Questions Actions Bar -->
         <div class="questions-actions-bar">
           <div style="font-weight: 700; font-size: 15px; color: var(--text-heading);">📝 بنك الأسئلة والتقييم الذاتي</div>
-          <div class="actions-buttons">
-            <button id="btnExpandAll" class="action-btn">🔓 عرض كافة الأجوبة</button>
-            <button id="btnCollapseAll" class="action-btn">🔒 إخفاء كافة الأجوبة</button>
-          </div>
+
         </div>
 
         <!-- ==========================================
@@ -387,8 +333,7 @@
               <div class="question-text">True or false: Applications are organized by modules.</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">True. From the Go To menu, you can access a list of modules. You can then access the applications from within those modules.</div>
@@ -408,8 +353,7 @@
               <div class="question-text">True or false: Only an administrator with special rights can update Start Centers.</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">False. Users can customize their own Start Centers.</div>
@@ -429,8 +373,7 @@
               <div class="question-text">True or false: All applications contain a List tab and other application-specific tabs.</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">False. There are several single-page applications, including Sets, Currency Codes, Exchange Rates, and Terms and Conditions.</div>
@@ -450,8 +393,7 @@
               <div class="question-text">True or false: You can directly access Help for an application while in that application.</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">True. While in an application, the Help link provides direct access to help for that application.</div>
@@ -482,8 +424,7 @@
               <div class="question-text">What middleware components are necessary to use Tivoli’s process automation engine?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">The engine relies on middleware, which includes a Java EE server such as WebSphere and a database such as DB2. Middleware can also include an LDAP server for providing directory services for the application.</div>
@@ -503,8 +444,7 @@
               <div class="question-text">What is the Process Solution Installer?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -524,8 +464,7 @@
               <div class="question-text">What is the default port for the engine?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -545,8 +484,7 @@
               <div class="question-text">What superuser is created with the engine?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -566,8 +504,7 @@
               <div class="question-text">What is a Java EE Application Server used for?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -587,8 +524,7 @@
               <div class="question-text">What web-based application is used to administer WebSphere?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -608,8 +544,7 @@
               <div class="question-text">What are EAR files, and when must you updated them?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -629,8 +564,7 @@
               <div class="question-text">What are the buildmaximo.cmd and buildmxiehsear.cmd files used for?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">These commands are used to build the enterprise archive (EAR) files. These files are then deployed to the Java EE server so that the engine can be hosted there.</div>
@@ -650,8 +584,7 @@
               <div class="question-text">What types of utilities does the tools directory contain?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -671,8 +604,7 @@
               <div class="question-text">Where is the maximo.properties file found, and what is it used for?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -692,8 +624,7 @@
               <div class="question-text">What is a system property in Tivoli’s process automation engine?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">A system property is a key-value pair used by the product at the system level to set database access, directories, and other system-level settings.</div>
@@ -713,8 +644,7 @@
               <div class="question-text">Where can system properties be set in Tivoli’s process automation engine?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">In Tivoli’s process automation engine, system properties can be set in both the maximo.properties file and the System Properties application. There are various other properties files such as the doclinks.properties file as well.</div>
@@ -734,8 +664,7 @@
               <div class="question-text">What tool is used to encrypt the database password in the maximo.properties file?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">The encryptproperties.bat file is used to encrypt the passwords in the properties file.</div>
@@ -755,8 +684,7 @@
               <div class="question-text">What are two types of file attachments used by the engine?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Direct file attachments are documents that are attached directly to an application record. Referential attachments are documents that are attached to another application's records, which are associated with the current record.</div>
@@ -787,8 +715,7 @@
               <div class="question-text">Why are organizations needed in the engine?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">You can use organizations to have a single system with a single database. With organizations, certain entities such as security configuration can be shared, while others remain separated.</div>
@@ -808,8 +735,7 @@
               <div class="question-text">What are sets?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Sets are groupings of information that can be shared across organizational boundaries.</div>
@@ -829,8 +755,7 @@
               <div class="question-text">What is the least number of organizations and sets that must be present in the system?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Tivoli’s process automation engine must have at least one organization, one company set, and one item set.</div>
@@ -850,8 +775,7 @@
               <div class="question-text">What is a site?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">A site is a subdivision of an organization that tracks inventory and other data separately from other sites.</div>
@@ -871,8 +795,7 @@
               <div class="question-text">What are the two types of sets that are used in the system?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Company Sets and Item Sets.</div>
@@ -892,8 +815,7 @@
               <div class="question-text">What is a location hierarchy?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">The hierarchical location structure is a product location hierarchy that uses a parent-child design. This structure is used to represent locations where assets operate.</div>
@@ -913,8 +835,7 @@
               <div class="question-text">What is a system?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">A system is a group of locations organized into hierarchical or network relationships. They are used to group logically related locations for management purposes.</div>
@@ -934,8 +855,7 @@
               <div class="question-text">What is a virtual location?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">A location that does not represent a physical location. Typical examples might include End of Lease or Field Users.</div>
@@ -955,8 +875,7 @@
               <div class="question-text">What is the UNSPSC?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">You can use the United Nations Standard Products and Services Code (UNSPSC) to create a classification structure. The UNSPSC provides an open, standard coding system to classify both products and services for use throughout the global marketplace.</div>
@@ -976,8 +895,7 @@
               <div class="question-text">Why might you want to classify tickets? Assets?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1008,8 +926,7 @@
               <div class="question-text">How is a person record used?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">A person record contains basic information about people defined in the system.</div>
@@ -1029,8 +946,7 @@
               <div class="question-text">Define authentication and authorization.</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Authentication uses the user ID and password to determine who is trying to access the system. Authorization determines, based on group membership, what resources an authenticated user can access.</div>
@@ -1050,8 +966,7 @@
               <div class="question-text">What is a virtual profile?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">A virtual profile is created by combining two security groups.</div>
@@ -1071,8 +986,7 @@
               <div class="question-text">How do users and security groups work together?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Security groups define authorizations. The users inherit the authorizations of the groups to which they belong, which then creates their security profiles.</div>
@@ -1103,8 +1017,7 @@
               <div class="question-text">What do you use the Database Configuration application for?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">The Database Configuration application is used to create or modify the objects and attributes used by applications in the system.</div>
@@ -1124,8 +1037,7 @@
               <div class="question-text">When do changes made to the database using the Database Configuration application take effect?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">After completing changes to objects by modifying their attributes and adding indexes, you must institute those changes by configuring the database. Use the configDB.bat command file or the Apply Configuration Changes option from the Database Configuration application to configure the database.</div>
@@ -1145,8 +1057,7 @@
               <div class="question-text">How can you add indexes created by the database administrator in the native database to the engine data dictionary?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1166,8 +1077,7 @@
               <div class="question-text">Does adding a domain to an attribute change the way its value is displayed on the screen?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1187,8 +1097,7 @@
               <div class="question-text">What do you use E-signature and E-audit for?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Electronic signatures and electronic audit records (E-Signature and E-Audit) provide an additional level of security control and auditing. Using this capability, the system administrator can perform these tasks:
@@ -1210,8 +1119,7 @@
               <div class="question-text">What are two of the differences between running a database configuration from the Database Configuration application and from the command line?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">– When running the configuration from the command line, backup tables must be deleted first. Backup tables are automatically overwritten when running the configuration from the application.</div>
@@ -1242,8 +1150,7 @@
               <div class="question-text">What are craft records?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Crafts are used to identify the skill levels, standard rates, and premium pay codes for crafts in forecasting budget requirements.</div>
@@ -1263,8 +1170,7 @@
               <div class="question-text">What are labor records?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Labor records in the Labor application provide personal and work-related information, such as the labor code’s type of work, location of work, and workflow information.</div>
@@ -1284,8 +1190,7 @@
               <div class="question-text">What is the difference between a job plan and a work plan?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1305,8 +1210,7 @@
               <div class="question-text">When do you use the Assignment Manager application?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1337,8 +1241,7 @@
               <div class="question-text">What do you use domains for in the system?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1358,8 +1261,7 @@
               <div class="question-text">What is a signature option (SIGOPTION)?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1379,8 +1281,7 @@
               <div class="question-text">How can you delete from the system an application that was defined with Application Designer?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1411,8 +1312,7 @@
               <div class="question-text">What is a cron task?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">A cron task is a scheduled job that runs as a part of the application server. The cron task runs according to a predefined schedule and carries out business logic automatically.</div>
@@ -1432,8 +1332,7 @@
               <div class="question-text">What is the function of a communication template?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1453,8 +1352,7 @@
               <div class="question-text">Why is the Roles application useful in Tivoli’s process automation engine?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1474,8 +1372,7 @@
               <div class="question-text">What happens when an E-mail Listener processes an email from a sender who does not have a person record?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1495,8 +1392,7 @@
               <div class="question-text">What is a launch point?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1527,8 +1423,7 @@
               <div class="question-text">What is a Manual Input node?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1548,8 +1443,7 @@
               <div class="question-text">How many stop nodes can a workflow have?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1569,8 +1463,7 @@
               <div class="question-text">How many start nodes can a workflow have?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1590,8 +1483,7 @@
               <div class="question-text">From which application do you create a workflow?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1611,8 +1503,7 @@
               <div class="question-text">What is an auto-initiated workflow?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1643,8 +1534,7 @@
               <div class="question-text">What is the difference between a BIRT report and a QBR report?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">QBR reports are designed using a point-and-click process in the engine. BIRT reports are developed outside the engine and then imported. They are more feature rich but harder to develop.</div>
@@ -1664,8 +1554,7 @@
               <div class="question-text">Which report displays the timing for all reports on the system?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1685,8 +1574,7 @@
               <div class="question-text">What is a KPI?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1706,8 +1594,7 @@
               <div class="question-text">Which application do you use to develop BIRT reports?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1727,8 +1614,7 @@
               <div class="question-text">From where can you download BIRT Designer to develop BIRT reports for Tivoli’s process automation engine?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1759,8 +1645,7 @@
               <div class="question-text">What is an object structure?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">An object structure is the common data layer that the integration framework uses for all outbound and inbound application data processing. It is used to specified the objects, data fields, and relationships that are used when importing and exporting data.</div>
@@ -1780,8 +1665,7 @@
               <div class="question-text">What is an external system?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Any business application that sends data to the system or receives data from the system is an external system.</div>
@@ -1801,8 +1685,7 @@
               <div class="question-text">How are sigoptions used in application data import and export?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1822,8 +1705,7 @@
               <div class="question-text">What is an endpoint?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1843,8 +1725,7 @@
               <div class="question-text">What application do you use to track the history of messages processed by the Integration Framework?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
@@ -1875,8 +1756,7 @@
               <div class="question-text">What is a logger?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Loggers are components in the product that prepare log statements to be written to console or log file.</div>
@@ -1896,8 +1776,7 @@
               <div class="question-text">What is an appender?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">Logging requests can be sent to multiple destinations. An output destination is called an appender.</div>
@@ -1917,8 +1796,7 @@
               <div class="question-text">How can you specify an alternate folder for logs?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">You can specify a folder for your log files by selecting the Set Logging Root Folder action from the Select Action menu in the Logging application.</div>
@@ -1938,8 +1816,7 @@
               <div class="question-text">What is a web container?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">A web container is a run time environment for Web applications. It processes servlets, JSP files, and other types of server-side components.</div>
@@ -1959,8 +1836,7 @@
               <div class="question-text">How can you view the log files for the JVM associated with MXServer?</div>
             </div>
             <div class="question-body">
-              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
-              <div class="answer-content" style="display: none;">
+              <div class="answer-content">
                 <div class="official-answer">
                   <div class="official-answer-title">💡 الإجابة الرسمية:</div>
                   <div class="official-answer-text">The log files for the web container JVM are in the profile directory for MXServer. The logs are called SystemOut.log and SystemErr.log. Alternatively, you can view them using the WebSphere Administrative Console.</div>
@@ -2071,51 +1947,7 @@
       });
     });
 
-    // Single Question Toggle Answer Logic
-    document.querySelectorAll('.toggle-answer-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling;
-        const isCollapsed = content.style.display === 'none';
-        
-        if (isCollapsed) {
-          content.style.display = 'block';
-          btn.classList.add('active');
-          btn.innerHTML = '👁️ إخفاء الإجابة';
-        } else {
-          content.style.display = 'none';
-          btn.classList.remove('active');
-          btn.innerHTML = '👁️ عرض الإجابة';
-        }
-      });
-    });
 
-    // Global Expand / Collapse All Answers
-    const btnExpandAll = document.getElementById('btnExpandAll');
-    const btnCollapseAll = document.getElementById('btnCollapseAll');
-
-    if (btnExpandAll) {
-      btnExpandAll.addEventListener('click', () => {
-        document.querySelectorAll('.answer-content').forEach(content => {
-          content.style.display = 'block';
-        });
-        document.querySelectorAll('.toggle-answer-btn').forEach(btn => {
-          btn.classList.add('active');
-          btn.innerHTML = '👁️ إخفاء الإجابة';
-        });
-      });
-    }
-
-    if (btnCollapseAll) {
-      btnCollapseAll.addEventListener('click', () => {
-        document.querySelectorAll('.answer-content').forEach(content => {
-          content.style.display = 'none';
-        });
-        document.querySelectorAll('.toggle-answer-btn').forEach(btn => {
-          btn.classList.remove('active');
-          btn.innerHTML = '👁️ عرض الإجابة';
-        });
-      });
-    }
 
     // Client-side Question Search
     const searchInput = document.getElementById('searchInput');
