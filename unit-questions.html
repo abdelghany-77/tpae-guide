@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="أسئلة الوحدات والتقييم الذاتي لمنهج TPAE - Tivoli's Process Automation Engine">
+  <title>TPAE Study Guide | أسئلة الوحدات والتقييم الذاتي</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+  <style>
+    /* Styling overrides and question-specific layouts */
+    .unit-section {
+      display: block !important;
+      margin-bottom: 60px;
+    }
+    
+    .questions-actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+      background: var(--bg-card);
+      padding: 16px 24px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .actions-buttons {
+      display: flex;
+      gap: 12px;
+    }
+    
+    .action-btn {
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: "Cairo", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .action-btn:hover {
+      background: var(--accent-primary-dim);
+      color: var(--accent-primary);
+      border-color: var(--accent-primary);
+    }
+    
+    .question-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      overflow: hidden;
+      transition: var(--transition-base);
+    }
+    
+    .question-card:hover {
+      border-color: var(--border-light);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .question-header {
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .question-num {
+      background: var(--accent-primary-dim);
+      color: var(--accent-primary);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    
+    .question-text {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-heading);
+      line-height: 1.6;
+      text-align: right;
+    }
+    
+    .question-body {
+      padding: 20px 24px;
+    }
+    
+    .toggle-answer-btn {
+      background: var(--bg-secondary);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: "Cairo", sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .toggle-answer-btn:hover {
+      background: var(--accent-primary-dim);
+      color: var(--accent-primary);
+      border-color: var(--accent-primary);
+    }
+    
+    .toggle-answer-btn.active {
+      background: var(--accent-primary);
+      color: #ffffff;
+      border-color: var(--accent-primary);
+    }
+    
+    .answer-content {
+      margin-top: 16px;
+      animation: fadeIn 0.3s ease;
+    }
+    
+    .official-answer {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.02);
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      border-right: 3px solid var(--accent-secondary);
+      margin-bottom: 12px;
+    }
+    
+    .official-answer-title {
+      direction: rtl;
+      text-align: right;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--accent-secondary);
+    }
+    
+    .official-answer-text {
+      direction: ltr;
+      text-align: left;
+      font-family: sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    
+    .official-answer-text.missing {
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    a.nav-unit-btn {
+      text-decoration: none;
+    }
+    
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+    
+    .back-btn:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--accent-primary);
+      box-shadow: var(--shadow-glow-cyan);
+    }
+    
+    .back-btn-text {
+      margin-left: 4px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // Prevent flash of unstyled theme and font size
+    const currentTheme = localStorage.getItem("tpae-theme") || "dark";
+    if (currentTheme === "light") {
+      document.body.classList.add("theme-light");
+    } else if (currentTheme === "sepia") {
+      document.body.classList.add("theme-sepia");
+    }
+    const fontScale = localStorage.getItem("tpae-font-scale") || "17";
+    document.documentElement.style.setProperty("--font-base-size", fontScale + "px");
+  </script>
+
+  <div class="app-layout">
+
+    <!-- Mobile Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- ====== SIDEBAR ====== -->
+    <aside class="sidebar" id="sidebarPanel">
+      <div class="sidebar-header">
+        <div class="sidebar-logo">
+          <div class="sidebar-logo-icon">Q</div>
+          <div>
+            <div class="sidebar-logo-text">أسئلة الوحدات</div>
+            <div class="sidebar-logo-sub">TPAE Self-Assessment</div>
+          </div>
+        </div>
+        <div class="search-container">
+          <span class="search-icon">🔍</span>
+          <input type="text" class="search-input" placeholder="بحث في الأسئلة..." id="searchInput">
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">فهرس الوحدات الدراسية</div>
+
+        <!-- Unit 1 Link -->
+        <div class="nav-unit">
+          <a href="#unit-1" class="nav-unit-btn active" data-unit="unit-1">
+            <div class="nav-unit-icon">🛠️</div>
+            <span class="unit-label">الوحدة 1: نظرة عامة</span>
+          </a>
+        </div>
+
+        <!-- Unit 2 Link -->
+        <div class="nav-unit">
+          <a href="#unit-2" class="nav-unit-btn" data-unit="unit-2">
+            <div class="nav-unit-icon">🏗️</div>
+            <span class="unit-label">الوحدة 2: المعمارية والمكونات</span>
+          </a>
+        </div>
+
+        <!-- Unit 3 Link -->
+        <div class="nav-unit">
+          <a href="#unit-3" class="nav-unit-btn" data-unit="unit-3">
+            <div class="nav-unit-icon">📦</div>
+            <span class="unit-label">الوحدة 3: البيانات التأسيسية</span>
+          </a>
+        </div>
+
+        <!-- Unit 4 Link -->
+        <div class="nav-unit">
+          <a href="#unit-4" class="nav-unit-btn" data-unit="unit-4">
+            <div class="nav-unit-icon">🔒</div>
+            <span class="unit-label">الوحدة 4: الأمان</span>
+          </a>
+        </div>
+
+        <!-- Unit 5 Link -->
+        <div class="nav-unit">
+          <a href="#unit-5" class="nav-unit-btn" data-unit="unit-5">
+            <div class="nav-unit-icon">🗄️</div>
+            <span class="unit-label">الوحدة 5: قاعدة البيانات</span>
+          </a>
+        </div>
+
+        <!-- Unit 6 Link -->
+        <div class="nav-unit">
+          <a href="#unit-6" class="nav-unit-btn" data-unit="unit-6">
+            <div class="nav-unit-icon">👷</div>
+            <span class="unit-label">الوحدة 6: إدارة العمل</span>
+          </a>
+        </div>
+
+        <!-- Unit 7 Link -->
+        <div class="nav-unit">
+          <a href="#unit-7" class="nav-unit-btn" data-unit="unit-7">
+            <div class="nav-unit-icon">⚙️</div>
+            <span class="unit-label">الوحدة 7: تخصيص التطبيقات</span>
+          </a>
+        </div>
+
+        <!-- Unit 8 Link -->
+        <div class="nav-unit">
+          <a href="#unit-8" class="nav-unit-btn" data-unit="unit-8">
+            <div class="nav-unit-icon">⏱️</div>
+            <span class="unit-label">الوحدة 8: الأتمتة</span>
+          </a>
+        </div>
+
+        <!-- Unit 9 Link -->
+        <div class="nav-unit">
+          <a href="#unit-9" class="nav-unit-btn" data-unit="unit-9">
+            <div class="nav-unit-icon">🏁</div>
+            <span class="unit-label">الوحدة 9: مسارات العمل</span>
+          </a>
+        </div>
+
+        <!-- Unit 10 Link -->
+        <div class="nav-unit">
+          <a href="#unit-10" class="nav-unit-btn" data-unit="unit-10">
+            <div class="nav-unit-icon">📊</div>
+            <span class="unit-label">الوحدة 10: محرك التقارير</span>
+          </a>
+        </div>
+
+        <!-- Unit 11 Link -->
+        <div class="nav-unit">
+          <a href="#unit-11" class="nav-unit-btn" data-unit="unit-11">
+            <div class="nav-unit-icon">🔌</div>
+            <span class="unit-label">الوحدة 11: إطار التكامل</span>
+          </a>
+        </div>
+
+        <!-- Unit 12 Link -->
+        <div class="nav-unit">
+          <a href="#unit-12" class="nav-unit-btn" data-unit="unit-12">
+            <div class="nav-unit-icon">🔍</div>
+            <span class="unit-label">الوحدة 12: تتبع الأعطال</span>
+          </a>
+        </div>
+
+      </nav>
+    </aside>
+
+    <!-- ====== MAIN CONTENT ====== -->
+    <main class="main-content">
+
+      <!-- Header -->
+      <header class="content-header">
+        <div class="header-breadcrumb">
+          📚 TPAE &nbsp;/&nbsp; <span>أسئلة الوحدات والتقييم الذاتي</span>
+        </div>
+        <div class="header-actions">
+          <a href="index.html" class="back-btn" title="الرجوع للرئيسية">
+            <span class="back-btn-text">الرجوع للرئيسية</span>
+            <span>🏠</span>
+          </a>
+          <button class="btn-icon mobile-menu-btn" id="mobileMenuBtn" title="القائمة">☰</button>
+        </div>
+      </header>
+
+      <!-- Content Body -->
+      <div class="content-body">
+
+        <!-- Questions Actions Bar -->
+        <div class="questions-actions-bar">
+          <div style="font-weight: 700; font-size: 15px; color: var(--text-heading);">📝 بنك الأسئلة والتقييم الذاتي</div>
+          <div class="actions-buttons">
+            <button id="btnExpandAll" class="action-btn">🔓 عرض كافة الأجوبة</button>
+            <button id="btnCollapseAll" class="action-btn">🔒 إخفاء كافة الأجوبة</button>
+          </div>
+        </div>
+
+        <!-- ==========================================
+           UNIT 1: Overview
+           ========================================== -->
+        <section class="unit-section" id="unit-1">
+          <div class="unit-header">
+            <div class="unit-number u1">📘 الوحدة الأولى</div>
+            <h2 class="unit-title">Tivoli’s process automation engine overview</h2>
+            <p class="unit-desc">نظرة عامة على المحرك والوظائف والموديولات وكيفية تقسيم وإتاحة التطبيقات للمستخدمين.</p>
+          </div>
+
+          <!-- Q1.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">True or false: Applications are organized by modules.</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">True. From the Go To menu, you can access a list of modules. You can then access the applications from within those modules.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يتم تنظيم التطبيقات هيكلياً وتجميعها داخل وحدات (Modules) للوصول إليها بسهولة عبر قائمة التنقل الرئيسية.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q1.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">True or false: Only an administrator with special rights can update Start Centers.</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">False. Users can customize their own Start Centers.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  تتيح المنصة للمستخدمين العاديين تخصيص واجهات مراكز البدء الخاصة بهم (Start Centers) ولا تقتصر على المديرين.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q1.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">True or false: All applications contain a List tab and other application-specific tabs.</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">False. There are several single-page applications, including Sets, Currency Codes, Exchange Rates, and Terms and Conditions.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هناك تطبيقات تتكون من صفحة واحدة فقط (Single-page applications) ولا تحتوي على تبويب القائمة (List tab).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q1.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">True or false: You can directly access Help for an application while in that application.</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">True. While in an application, the Help link provides direct access to help for that application.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يوفر النظام ميزة المساعدة السياقية المرتبطة بالتطبيق المفتوح مباشرة.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 2: Architecture and system components
+           ========================================== -->
+        <section class="unit-section" id="unit-2">
+          <div class="unit-header">
+            <div class="unit-number u2">📘 الوحدة الثانية</div>
+            <h2 class="unit-title">Architecture and system components</h2>
+            <p class="unit-desc">المعمارية التقنية، البرمجيات الوسيطة، خادم التطبيقات WebSphere، وحزم EAR وملفات الخصائص.</p>
+          </div>
+
+          <!-- Q2.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">What middleware components are necessary to use Tivoli’s process automation engine?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">The engine relies on middleware, which includes a Java EE server such as WebSphere and a database such as DB2. Middleware can also include an LDAP server for providing directory services for the application.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يتطلب تشغيل النظام برمجيات وسيطة كخوادم الويب (WebSphere) وقواعد البيانات، اختيارياً مع خوادم الدليل (LDAP).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">What is the Process Solution Installer?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يبحث في أداة تثبيت الحزم البرمجية للنظام.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">What is the default port for the engine?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يركز على المنفذ الافتراضي للوصول لخادم التطبيقات.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">What superuser is created with the engine?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يتعلق بحساب المسؤول الجذري (Superuser) الذي يُنشأ تلقائياً.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.5 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٥</span>
+              <div class="question-text">What is a Java EE Application Server used for?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يستعلم عن دور حاوية الجافا (Java EE) في استضافة كود النظام.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.6 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٦</span>
+              <div class="question-text">What web-based application is used to administer WebSphere?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يبحث عن واجهة التحكم الرسومية المخصصة لإدارة خادم WebSphere.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.7 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٧</span>
+              <div class="question-text">What are EAR files, and when must you updated them?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يركز على حزم التطبيقات (EAR) ومتى يلزم إعادة بنائها.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.8 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٨</span>
+              <div class="question-text">What are the buildmaximo.cmd and buildmxiehsear.cmd files used for?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">These commands are used to build the enterprise archive (EAR) files. These files are then deployed to the Java EE server so that the engine can be hosted there.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذه الأوامر البرمجية تُستخدم لتجميع كود النظام في حزم (EAR) جاهزة للنشر على السيرفر.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.9 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٩</span>
+              <div class="question-text">What types of utilities does the tools directory contain?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يستعلم هذا السؤال عن السكريبتات والأدوات الموجودة في مسار مجلد الأدوات (Tools).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.10 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١٠</span>
+              <div class="question-text">Where is the maximo.properties file found, and what is it used for?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يركز هذا السؤال على ملف الإعدادات المركزي (maximo.properties).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.11 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١١</span>
+              <div class="question-text">What is a system property in Tivoli’s process automation engine?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">A system property is a key-value pair used by the product at the system level to set database access, directories, and other system-level settings.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  خصائص النظام هي متغيرات (Key-Value) تتحكم مركزياً في إعدادات مسارات وقواعد بيانات النظام.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.12 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١٢</span>
+              <div class="question-text">Where can system properties be set in Tivoli’s process automation engine?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">In Tivoli’s process automation engine, system properties can be set in both the maximo.properties file and the System Properties application. There are various other properties files such as the doclinks.properties file as well.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يمكن ضبط خصائص النظام برمجياً عبر ملف maximo.properties أو من خلال واجهة تطبيق النظام.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.13 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١٣</span>
+              <div class="question-text">What tool is used to encrypt the database password in the maximo.properties file?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">The encryptproperties.bat file is used to encrypt the passwords in the properties file.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  تُستخدم أداة encryptproperties.bat لتشفير كلمات المرور الحساسة في ملفات التكوين.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q2.14 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١٤</span>
+              <div class="question-text">What are two types of file attachments used by the engine?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Direct file attachments are documents that are attached directly to an application record. Referential attachments are documents that are attached to another application's records, which are associated with the current record.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يدعم النظام المرفقات المباشرة (Direct) والمرفقات المرجعية (Referential) التي ترتبط بسجلات أخرى.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 3: Foundation data
+           ========================================== -->
+        <section class="unit-section" id="unit-3">
+          <div class="unit-header">
+            <div class="unit-number u3">📘 الوحدة الثالثة</div>
+            <h2 class="unit-title">Foundation data</h2>
+            <p class="unit-desc">البيانات التأسيسية: هيكل المؤسسات والمواقع والمجموعات، التسلسل الهرمي للمواقع، معيار UNSPSC والتصنيفات.</p>
+          </div>
+
+          <!-- Q3.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">Why are organizations needed in the engine?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">You can use organizations to have a single system with a single database. With organizations, certain entities such as security configuration can be shared, while others remain separated.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  المؤسسات (Organizations) تسمح بعزل البيانات ومشاركتها بمرونة مع استخدام سيرفر وقاعدة بيانات واحدة.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">What are sets?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Sets are groupings of information that can be shared across organizational boundaries.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  المجموعات (Sets) هي طبقة بيانات أعلى من المؤسسة تسمح بمشاركة السجلات بين كيانات مختلفة.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">What is the least number of organizations and sets that must be present in the system?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Tivoli’s process automation engine must have at least one organization, one company set, and one item set.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  القيد الهندسي يفرض وجود مؤسسة واحدة ومجموعة شركات واحدة ومجموعة عناصر واحدة كحد أدنى.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">What is a site?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">A site is a subdivision of an organization that tracks inventory and other data separately from other sites.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  الموقع (Site) هو تقسيم تشغيلي فرعي يضمن عزل بيانات المخزون والأصول عن المواقع الأخرى.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3.5 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٥</span>
+              <div class="question-text">What are the two types of sets that are used in the system?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Company Sets and Item Sets.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يوفر النظام نوعين رئيسيين من المجموعات: مجموعات الشركات ومجموعات العناصر.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3.6 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٦</span>
+              <div class="question-text">What is a location hierarchy?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">The hierarchical location structure is a product location hierarchy that uses a parent-child design. This structure is used to represent locations where assets operate.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هيكل المواقع هو نظام هرمي (أب-ابن) لتمثيل أماكن تشغيل الأصول بدقة.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3.7 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٧</span>
+              <div class="question-text">What is a system?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">A system is a group of locations organized into hierarchical or network relationships. They are used to group logically related locations for management purposes.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  النظام الخارجي يمثل تجميعاً منطقياً لشبكة مواقع لخدمة الأغراض الإدارية.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3.8 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٨</span>
+              <div class="question-text">What is a virtual location?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">A location that does not represent a physical location. Typical examples might include End of Lease or Field Users.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  الموقع الافتراضي يمثل كياناً أو حالة تشغيلية ولا يشير إلى مكان جغرافي مادي.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3.9 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٩</span>
+              <div class="question-text">What is the UNSPSC?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">You can use the United Nations Standard Products and Services Code (UNSPSC) to create a classification structure. The UNSPSC provides an open, standard coding system to classify both products and services for use throughout the global marketplace.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هو معيار أممي مفتوح لتصنيف المنتجات والخدمات عالمياً يُستخدم في شجرة تصنيفات النظام.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q3.10 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١٠</span>
+              <div class="question-text">Why might you want to classify tickets? Assets?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يستعرض الفوائد من نظام تصنيف الأصول والتذاكر في البحث وإعداد التقارير.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 4: Security
+           ========================================== -->
+        <section class="unit-section" id="unit-4">
+          <div class="unit-header">
+            <div class="unit-number u4">📘 الوحدة الرابعة</div>
+            <h2 class="unit-title">Security</h2>
+            <p class="unit-desc">الأمان والصلاحيات والمجموعات الأمنية وسجل الأشخاص مقابل حسابات المستخدمين والمصادقة والتفويض.</p>
+          </div>
+
+          <!-- Q4.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">How is a person record used?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">A person record contains basic information about people defined in the system.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  سجل الشخص يُخزن معلومات الموظفين الأساسية ويختلف برمجياً عن حساب المستخدم (User account).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">Define authentication and authorization.</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Authentication uses the user ID and password to determine who is trying to access the system. Authorization determines, based on group membership, what resources an authenticated user can access.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  المصادقة (Authentication) تؤكد الهوية، والتفويض (Authorization) يحدد صلاحيات الدخول عبر المجموعات الأمنية.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">What is a virtual profile?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">A virtual profile is created by combining two security groups.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  الملف الشخصي الافتراضي يتشكل برمجياً من دمج صلاحيات جميع المجموعات المرتبطة بالمستخدم.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">How do users and security groups work together?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Security groups define authorizations. The users inherit the authorizations of the groups to which they belong, which then creates their security profiles.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يرث المستخدمون صلاحيات الوصول الخاصة بهم من المجموعات الأمنية المُلحقين بها.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 5: Database architecture
+           ========================================== -->
+        <section class="unit-section" id="unit-5">
+          <div class="unit-header">
+            <div class="unit-number u5">📘 الوحدة الخامسة</div>
+            <h2 class="unit-title">Database architecture</h2>
+            <p class="unit-desc">تهيئة قاعدة البيانات (Database Configuration)، النطاقات (Domains)، التوقيع الإلكتروني E-signature والتدقيق E-audit.</p>
+          </div>
+
+          <!-- Q5.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">What do you use the Database Configuration application for?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">The Database Configuration application is used to create or modify the objects and attributes used by applications in the system.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا التطبيق هو واجهة الـ ORM في النظام لإدارة الجداول والأعمدة دون كتابة كود SQL.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">When do changes made to the database using the Database Configuration application take effect?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">After completing changes to objects by modifying their attributes and adding indexes, you must institute those changes by configuring the database. Use the configDB.bat command file or the Apply Configuration Changes option from the Database Configuration application to configure the database.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  التغييرات لا تُنفذ فوراً بل تتطلب تشغيل أوامر ConfigDB لتحديث الهيكل المادي لقاعدة البيانات.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">How can you add indexes created by the database administrator in the native database to the engine data dictionary?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يركز هذا السؤال على طريقة مزامنة فهارس قاعدة البيانات الأصلية مع طبقة الـ Data Dictionary.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">Does adding a domain to an attribute change the way its value is displayed on the screen?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يتطرق هذا السؤال لوظيفة النطاقات (Domains) كأداة تحكم في البيانات.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5.5 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٥</span>
+              <div class="question-text">What do you use E-signature and E-audit for?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Electronic signatures and electronic audit records (E-Signature and E-Audit) provide an additional level of security control and auditing. Using this capability, the system administrator can perform these tasks:
+– Require a user to provide a specific signature when saving or changing a record or accessing a specific menu item.
+– Record and audit changes to records and keep copies of those changes to produce an audit trail.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  تُستخدم هذه الميزات لتوفير سجل تتبع (Audit) قوي وإلزام المستخدم بالتحقق الأمني عند الإجراءات الحساسة.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5.6 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٦</span>
+              <div class="question-text">What are two of the differences between running a database configuration from the Database Configuration application and from the command line?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">– When running the configuration from the command line, backup tables must be deleted first. Backup tables are automatically overwritten when running the configuration from the application.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  تكوين قاعدة البيانات يدوياً عبر الـ Command Line يتطلب حذف جداول النسخ الاحتياطية أولاً، بخلاف واجهة التطبيق التي تفعل ذلك تلقائياً.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 6: Work Management
+           ========================================== -->
+        <section class="unit-section" id="unit-6">
+          <div class="unit-header">
+            <div class="unit-number u6">📘 الوحدة السادسة</div>
+            <h2 class="unit-title">Work Management</h2>
+            <p class="unit-desc">إدارة العمل: العمالة والمهارات الحرفية (Craft and Labor)، خطط العمل (Job and Work Plans)، وتعيين المهام.</p>
+          </div>
+
+          <!-- Q6.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">What are craft records?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Crafts are used to identify the skill levels, standard rates, and premium pay codes for crafts in forecasting budget requirements.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  تُستخدم الحرف (Crafts) لتحديد تكاليف العمالة والمهارات لدعم إعداد ميزانيات أوامر الشغل.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">What are labor records?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Labor records in the Labor application provide personal and work-related information, such as the labor code’s type of work, location of work, and workflow information.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  سجلات العمل تُمثل بيانات العمالة الفعلية التي تنفذ مهام الصيانة والمواقع المحددة لها.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">What is the difference between a job plan and a work plan?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يستعرض الفارق بين خطة العمل القياسية (Job Plan) وتطبيقها الفعلي (Work Plan).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q6.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">When do you use the Assignment Manager application?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يستعلم هذا السؤال عن دور مدير التعيينات في تخصيص المهام للعمالة المتاحة.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 7: Customizing an application
+           ========================================== -->
+        <section class="unit-section" id="unit-7">
+          <div class="unit-header">
+            <div class="unit-number u7">📘 الوحدة السابعة</div>
+            <h2 class="unit-title">Customizing an application</h2>
+            <p class="unit-desc">تخصيص التطبيقات: استخدام النطاقات، خيارات التوقيع الأمني (SIGOPTION)، وحذف التطبيقات من مصمم الشاشات.</p>
+          </div>
+
+          <!-- Q7.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">What do you use domains for in the system?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يركز هذا السؤال على وظيفة الـ Domains كقوائم قيم معيارية للمستخدمين.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">What is a signature option (SIGOPTION)?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يسأل هذا الجزء عن رموز الأمان المُستخدمة لتقييد الوصول لخصائص الواجهة.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q7.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">How can you delete from the system an application that was defined with Application Designer?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يختبر الآلية المطلوبة لحذف تطبيق مُخصص برمجياً (حيث يتطلب حذف عبر SQL مباشر).
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 8: Automation
+           ========================================== -->
+        <section class="unit-section" id="unit-8">
+          <div class="unit-header">
+            <div class="unit-number u8">📘 الوحدة الثامنة</div>
+            <h2 class="unit-title">Automation</h2>
+            <p class="unit-desc">الأتمتة والعمليات التلقائية: المهام المجدولة (Cron Tasks)، قوالب الاتصال، تطبيق الأدوار، مستمع البريد، ونقاط الإطلاق (Launch Points).</p>
+          </div>
+
+          <!-- Q8.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">What is a cron task?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">A cron task is a scheduled job that runs as a part of the application server. The cron task runs according to a predefined schedule and carries out business logic automatically.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  مهام Cron هي وظائف برمجية تعمل تلقائياً في الخلفية ضمن خادم التطبيقات لأتمتة العمليات.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">What is the function of a communication template?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يستعلم عن دور قوالب التواصل لتوحيد تنسيق البريد الإلكتروني.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">Why is the Roles application useful in Tivoli’s process automation engine?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يركز هذا السؤال على كيفية استخدام الأدوار في توجيه الإشعارات وسير العمل ديناميكياً.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">What happens when an E-mail Listener processes an email from a sender who does not have a person record?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يسأل عن القيود الأمنية الخاصة باستقبال النظام لرسائل خارجية.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q8.5 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٥</span>
+              <div class="question-text">What is a launch point?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هذا السؤال يركز على نقطة الإطلاق (Launch point) الخاصة بتفعيل سكريبتات الأتمتة.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 9: Workflow
+           ========================================== -->
+        <section class="unit-section" id="unit-9">
+          <div class="unit-header">
+            <div class="unit-number u9">📘 الوحدة التاسعة</div>
+            <h2 class="unit-title">Workflow</h2>
+            <p class="unit-desc">مسارات العمل (Workflow): عقد الإدخال اليدوي، عقد البداية والنهاية، مصمم مسارات العمل، وإطلاقها تلقائياً.</p>
+          </div>
+
+          <!-- Q9.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">What is a Manual Input node?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يستعلم هذا السؤال عن العقدة البرمجية التي تطلب تدخلاً بشرياً لاستكمال سير العمل.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q9.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">How many stop nodes can a workflow have?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يختبر هذا السؤال القواعد الهيكلية لتصميم سير العمل التتابعي.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q9.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">How many start nodes can a workflow have?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يركز السؤال على المعمارية المبدئية لإطلاق مسار العمل الواحد.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q9.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">From which application do you create a workflow?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يستعلم عن التطبيق المسؤول عن رسم واجهة العمل (Workflow Designer).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q9.5 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٥</span>
+              <div class="question-text">What is an auto-initiated workflow?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يتطرق لعمليات سير العمل التي تعمل تلقائياً دون تدخل يدوي.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 10: Reporting
+           ========================================== -->
+        <section class="unit-section" id="unit-10">
+          <div class="unit-header">
+            <div class="unit-number u10">📘 الوحدة العاشرة</div>
+            <h2 class="unit-title">Reporting</h2>
+            <p class="unit-desc">محرك التقارير: الفرق بين تقارير BIRT وتقارير QBR الارتجالية، مؤشرات الأداء (KPIs)، ومراقبة التقارير.</p>
+          </div>
+
+          <!-- Q10.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">What is the difference between a BIRT report and a QBR report?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">QBR reports are designed using a point-and-click process in the engine. BIRT reports are developed outside the engine and then imported. They are more feature rich but harder to develop.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  تقارير QBR تُبنى بسهولة من داخل النظام، بينما تقارير BIRT مخصصة ومتقدمة وتُطور خارجياً قبل استيرادها.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q10.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">Which report displays the timing for all reports on the system?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يسأل عن التقرير الخاص بمراقبة أداء محرك التقارير الداخلي.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q10.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">What is a KPI?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يركز على مؤشرات الأداء الرئيسية المستخدمة في لوحات القياس (Start Centers).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q10.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">Which application do you use to develop BIRT reports?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يستعلم عن الأداة الخارجية لتطوير تقارير المنظومة.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q10.5 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٥</span>
+              <div class="question-text">From where can you download BIRT Designer to develop BIRT reports for Tivoli’s process automation engine?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يسأل عن مصدر الأداة الأساسية لبناء تقارير النظام المتقدمة.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 11: Integration Framework
+           ========================================== -->
+        <section class="unit-section" id="unit-11">
+          <div class="unit-header">
+            <div class="unit-number u11">📘 الوحدة الحادية عشرة</div>
+            <h2 class="unit-title">Integration Framework</h2>
+            <p class="unit-desc">إطار التكامل (MIF): هياكل الكائنات (Object Structures)، الأنظمة الخارجية، صلاحيات استيراد وتصدير البيانات، ونقاط النهاية (Endpoints).</p>
+          </div>
+
+          <!-- Q11.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">What is an object structure?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">An object structure is the common data layer that the integration framework uses for all outbound and inbound application data processing. It is used to specified the objects, data fields, and relationships that are used when importing and exporting data.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  هياكل الكائنات (Object Structures) تعمل كطبقة تجريدية للبيانات المسموح بتبادلها مع الأنظمة الخارجية.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q11.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">What is an external system?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Any business application that sends data to the system or receives data from the system is an external system.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  أي تطبيق أو برمجية طرف ثالث تتعامل مع النظام تعتبر نظاماً خارجياً (External System).
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q11.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">How are sigoptions used in application data import and export?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يتطرق للقيود الأمنية المتعلقة بصلاحيات تصدير واستيراد البيانات.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q11.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">What is an endpoint?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يسأل عن نقطة النهاية (Endpoint) التي تحدد المسار الفيزيائي لتوجيه البيانات المُصدرة.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q11.5 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٥</span>
+              <div class="question-text">What application do you use to track the history of messages processed by the Integration Framework?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text missing">[Official answer not provided in the source excerpts]</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يستعلم عن واجهة مراقبة وتتبع رسائل التكامل في النظام.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================
+           UNIT 12: Troubleshooting
+           ========================================== -->
+        <section class="unit-section" id="unit-12">
+          <div class="unit-header">
+            <div class="unit-number u12">📘 الوحدة الثانية عشرة</div>
+            <h2 class="unit-title">Troubleshooting</h2>
+            <p class="unit-desc">تتبع ومعالجة الأعطال: المسجلات (Loggers)، موجهات الخرج (Appenders)، مسارات اللوجات، حاويات الويب، وسجلات JVM.</p>
+          </div>
+
+          <!-- Q12.1 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ١</span>
+              <div class="question-text">What is a logger?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Loggers are components in the product that prepare log statements to be written to console or log file.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  المُسجلات (Loggers) هي المكونات البرمجية التي تقوم بتحضير وتنسيق رسائل الأخطاء والأحداث.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q12.2 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٢</span>
+              <div class="question-text">What is an appender?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">Logging requests can be sent to multiple destinations. An output destination is called an appender.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  الوجهة (Appender) هي مسار الخرج النهائي (مثل ملف نصي أو شاشة) الذي تُرسل إليه رسائل المُسجلات.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q12.3 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٣</span>
+              <div class="question-text">How can you specify an alternate folder for logs?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">You can specify a folder for your log files by selecting the Set Logging Root Folder action from the Select Action menu in the Logging application.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  يمكن تغيير المسار الافتراضي لملفات السجلات (Logs) ديناميكياً عبر تطبيق إدارة السجلات.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q12.4 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٤</span>
+              <div class="question-text">What is a web container?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">A web container is a run time environment for Web applications. It processes servlets, JSP files, and other types of server-side components.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  حاوية الويب (Web container) هي البيئة المسؤولة عن تنفيذ ومعالجة ملفات واجهات المستخدم البرمجية.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Q12.5 -->
+          <div class="question-card">
+            <div class="question-header">
+              <span class="question-num">سؤال ٥</span>
+              <div class="question-text">How can you view the log files for the JVM associated with MXServer?</div>
+            </div>
+            <div class="question-body">
+              <button class="toggle-answer-btn">👁️ عرض الإجابة</button>
+              <div class="answer-content" style="display: none;">
+                <div class="official-answer">
+                  <div class="official-answer-title">💡 الإجابة الرسمية:</div>
+                  <div class="official-answer-text">The log files for the web container JVM are in the profile directory for MXServer. The logs are called SystemOut.log and SystemErr.log. Alternatively, you can view them using the WebSphere Administrative Console.</div>
+                </div>
+                <div class="info-block tip">
+                  <div class="info-block-title">📝 ملخص الدرس:</div>
+                  ملفات السجلات الجوهرية (SystemOut.log و SystemErr.log) تُحفظ محلياً داخل مجلدات بيئة السيرفر أو عبر واجهة التحكم.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Theme sync listener in case theme changes dynamically on other tabs (optional but nice)
+    window.addEventListener('storage', (e) => {
+      if (e.key === 'tpae-theme') {
+        document.body.classList.remove('theme-light', 'theme-sepia');
+        if (e.newValue === 'light') {
+          document.body.classList.add('theme-light');
+        } else if (e.newValue === 'sepia') {
+          document.body.classList.add('theme-sepia');
+        }
+      }
+      if (e.key === 'tpae-font-scale') {
+        document.documentElement.style.setProperty('--font-base-size', e.newValue + 'px');
+      }
+    });
+
+    // Mobile Menu Handlers
+    const sidebar = document.getElementById('sidebarPanel');
+    const overlay = document.getElementById('sidebarOverlay');
+    const mobileBtn = document.getElementById('mobileMenuBtn');
+
+    function openMobileMenu() {
+      sidebar.classList.add('open');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+      sidebar.classList.remove('open');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    if (mobileBtn) {
+      mobileBtn.addEventListener('click', () => {
+        if (sidebar.classList.contains('open')) {
+          closeMobileMenu();
+        } else {
+          openMobileMenu();
+        }
+      });
+    }
+
+    if (overlay) {
+      overlay.addEventListener('click', closeMobileMenu);
+    }
+
+    // Scroll Spy & Navigation Highlight
+    const sections = document.querySelectorAll('section.unit-section');
+    const navLinks = document.querySelectorAll('.sidebar-nav .nav-unit-btn');
+
+    function updateActiveNavLink() {
+      let currentId = 'unit-1';
+      const scrollPosition = window.scrollY || window.pageYOffset;
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        // If the top of the section is near or above the viewport, mark it active
+        if (scrollPosition >= (sectionTop - 120)) {
+          currentId = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${currentId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', updateActiveNavLink);
+    window.addEventListener('load', updateActiveNavLink);
+
+    // Smooth scroll for nav links & close mobile menu on click
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        const targetEl = document.querySelector(targetId);
+        if (targetEl) {
+          closeMobileMenu();
+          window.scrollTo({
+            top: targetEl.offsetTop - 90,
+            behavior: 'smooth'
+          });
+          // Update URL hash without jumping
+          history.pushState(null, null, targetId);
+          setTimeout(updateActiveNavLink, 300);
+        }
+      });
+    });
+
+    // Single Question Toggle Answer Logic
+    document.querySelectorAll('.toggle-answer-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.nextElementSibling;
+        const isCollapsed = content.style.display === 'none';
+        
+        if (isCollapsed) {
+          content.style.display = 'block';
+          btn.classList.add('active');
+          btn.innerHTML = '👁️ إخفاء الإجابة';
+        } else {
+          content.style.display = 'none';
+          btn.classList.remove('active');
+          btn.innerHTML = '👁️ عرض الإجابة';
+        }
+      });
+    });
+
+    // Global Expand / Collapse All Answers
+    const btnExpandAll = document.getElementById('btnExpandAll');
+    const btnCollapseAll = document.getElementById('btnCollapseAll');
+
+    if (btnExpandAll) {
+      btnExpandAll.addEventListener('click', () => {
+        document.querySelectorAll('.answer-content').forEach(content => {
+          content.style.display = 'block';
+        });
+        document.querySelectorAll('.toggle-answer-btn').forEach(btn => {
+          btn.classList.add('active');
+          btn.innerHTML = '👁️ إخفاء الإجابة';
+        });
+      });
+    }
+
+    if (btnCollapseAll) {
+      btnCollapseAll.addEventListener('click', () => {
+        document.querySelectorAll('.answer-content').forEach(content => {
+          content.style.display = 'none';
+        });
+        document.querySelectorAll('.toggle-answer-btn').forEach(btn => {
+          btn.classList.remove('active');
+          btn.innerHTML = '👁️ عرض الإجابة';
+        });
+      });
+    }
+
+    // Client-side Question Search
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const q = e.target.value.toLowerCase().trim();
+        const questionCards = document.querySelectorAll('.question-card');
+        const unitSections = document.querySelectorAll('.unit-section');
+
+        if (q === '') {
+          // Show everything
+          questionCards.forEach(card => card.style.display = '');
+          unitSections.forEach(section => section.style.display = 'block');
+          return;
+        }
+
+        // Filter cards
+        questionCards.forEach(card => {
+          const qText = card.querySelector('.question-text').textContent.toLowerCase();
+          const ansText = card.querySelector('.answer-content').textContent.toLowerCase();
+          
+          if (qText.includes(q) || ansText.includes(q)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Hide unit sections with zero matches
+        unitSections.forEach(section => {
+          const visibleCards = section.querySelectorAll('.question-card:not([style*="display: none"])');
+          if (visibleCards.length === 0) {
+            section.style.setProperty('display', 'none', 'important');
+          } else {
+            section.style.display = 'block';
+          }
+        });
+      });
+    }
+  </script>
+</body>
+
+</html>
