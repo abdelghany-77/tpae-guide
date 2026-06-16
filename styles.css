@@ -1538,7 +1538,9 @@ body.focus-mode #btnFocusMode {
     height: 100vh;
     height: 100dvh;
     transform: translateX(100%);
-    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    visibility: hidden;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: none;
     z-index: 600;
     overflow-y: auto;
@@ -1547,6 +1549,7 @@ body.focus-mode #btnFocusMode {
 
   .sidebar.open {
     transform: translateX(0);
+    visibility: visible;
     box-shadow: -8px 0 30px rgba(0, 0, 0, 0.5);
   }
 
@@ -1555,10 +1558,12 @@ body.focus-mode #btnFocusMode {
     width: 300px;
     max-width: 85vw;
     transform: translateX(100%);
+    visibility: hidden;
   }
 
   .sidebar.collapsed.open {
     transform: translateX(0);
+    visibility: visible;
   }
 
   .sidebar.collapsed .sidebar-header,
@@ -1594,7 +1599,8 @@ body.focus-mode #btnFocusMode {
   }
 
   /* Main content full width */
-  .main-content {
+  .main-content,
+  .sidebar.collapsed ~ .main-content {
     margin-right: 0 !important;
   }
 
